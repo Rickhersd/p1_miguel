@@ -44,3 +44,15 @@ async def obtener_libros(libro_id):
         )
     else:
         raise HTTPException(status_code=404, detail="Libro no encontrado")
+
+
+@app.delete("/libros/{libro_id}", status_code=status.HTTP_200_OK)
+async def eliminar_libro(libro_id: int):
+
+    conexion = Sessionlocal()
+    sentencia = delete(libros).where(libros.id == libro_id)
+    conexion.execute(sentencia)
+    conexion.commit()
+    conexion.close()
+
+    return {"message": "Libro eliminado correctamente"}
