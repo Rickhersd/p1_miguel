@@ -1,0 +1,1 @@
+# actividad2_rick_postgress
