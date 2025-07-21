@@ -27,3 +27,20 @@ async def crear_libro(libro: Annotated[crear_libros, Body()]):
     conexion.close()
 
     return "ok"
+
+@app.get("/libros/")
+async def obtener_libros(libro_id):
+    conexion = Sessionlocal()
+
+    sentencia = select(libros).where(libros.id == libro_id)
+    resultado = conexion.execute(sentencia).first()
+    conexion.close()
+    if resultado:
+        libro = resultado[0]
+        return leer_libros(
+            id=libro.id,
+            titulo=libro.titulo,
+            anio_publicacion=libro.anio_publicacion
+        )
+    else:
+        raise HTTPException(status_code=404, detail="Libro no encontrado")
