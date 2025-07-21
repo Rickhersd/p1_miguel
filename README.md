@@ -1,5 +1,3 @@
-# actividad2_rick_postgress
-
 📕 2. Mondongo Library – Biblioteca Académica y de Investigación
 
 Lógica de negocio: Enfocada en estudiantes universitarios e investigadores, Mondongo Library ofrece colecciones especializadas, acceso a publicaciones científicas y espacios de estudio. Monetiza a través de membresías premium, servicios de búsqueda avanzada, y asistencia académica personalizada.
