@@ -5,6 +5,7 @@ from app.database import Base
 class libro_categoria(Base):
     __tablename__ = "libro_categoria"
 
+    id = Column(Integer, primary_key=True) ## <- Agregar
     libro_id = Column(Integer, ForeignKey("libros.id"), primary_key=True)
     categoria_id = Column(Integer, ForeignKey("categorias.id"), primary_key=True)
 

@@ -6,6 +6,8 @@ from app.modelos import usuarios, raiting, prestamos, libros, libro_categoria, e
 from app.modelos.libros import libros
 from app.database import engine, Sessionlocal, Base
 
+## Buenisimo, usaste la apiV2 de Sqlalchemy. Solamente falto el endpoint de actualizar, pero del resto, todo bien.
+
 
 Base.metadata.create_all(bind=engine)
 

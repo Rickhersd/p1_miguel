@@ -2,6 +2,11 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from app.database import Base
 
+# RECOMENDACION: No es una regla escrita, pero las tablas que funcionan como intermediarias entre relaciones muchos a muchos,
+# se recomienda que tengan tambien una columna con el identificador de cada registro: autores_libros_id.
+# Hay quienes no lo hacen, pero desde mi punto de vista, deberia ser la practica correcta.
+
+
 class empleados(Base):
     __tablename__ = "empleados"
 

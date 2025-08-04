@@ -10,6 +10,10 @@ class prestamos(Base):
     usuario_id = Column(Integer, ForeignKey("usuarios.id"), nullable=False)
     empleado_id = Column(Integer, ForeignKey("empleados.id"), nullable=False)
 
+    # Aqui faltaron estas dos columns si no me equivoco
+    fecha_prestamo = Column(Date, nullable=False)
+    fecha_devolucion = Column(Date)
+
     libro = relationship("libros")
     usuario = relationship("usuarios", back_populates="prestamos")
     empleado = relationship("empleados", back_populates="prestamos")
